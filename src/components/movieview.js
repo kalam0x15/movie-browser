@@ -9,9 +9,10 @@ const MovieView = ()=>{
 
     const[movieDetails, setMovieDetails] = useState({})
     const[isLoading, setIsLoading] = useState(true)
+    const api_key = "" //tmdb API key
 
     useEffect(()=>{
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=61ca461da054475923b4675e9a3c7bba`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
             .then(response=>response.json())
             .then(data=>{
                 setMovieDetails(data)
