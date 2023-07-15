@@ -15,9 +15,11 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState('');
 
+  const api_key = "" //tmdb API key
+
   useEffect(()=>{
     if(searchText){
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=61ca461da054475923b4675e9a3c7bba`)
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=${api_key}`)
       .then(response=>response.json())
       .then(data=>{
         setSearchResults(data.results)
